@@ -14,6 +14,14 @@
     "2fa",
     "password-manager"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/search5/tabby-ssh-keepass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/search5/tabby-ssh-keepass/issues"
+  },
+  "homepage": "https://github.com/search5/tabby-ssh-keepass#readme",
   "main": "dist/index.js",
   "files": [
     "dist/",

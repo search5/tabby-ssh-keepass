@@ -23,7 +23,6 @@ export class KeePassPasswordStorageService extends PasswordStorageService {
                 const pw = await this.keePass.findPasswordForSSH(host, port)
                 if (pw) {
                     this.autoResponder.subscribeForProfile(profile)
-                    this.autoResponder.scheduleKIDisplay(host, port)
                     return pw
                 }
             } catch (e) {

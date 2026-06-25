@@ -42,12 +42,6 @@ export class KeePassAutoResponderService {
         }
     }
 
-    scheduleKIDisplay (host: string, port: number): void {
-        // loadPassword is called from keyboardInteractiveAuthPanel.ngOnInit —
-        // setTimeout(0) fires after Angular finishes rendering the panel's children
-        setTimeout(() => void this.injectTotpDisplay(host, port), 0)
-    }
-
     private subscribeSession (session: any) {
         if (this.subscribedSessions.has(session)) return
         this.subscribedSessions.add(session)
@@ -81,41 +75,5 @@ export class KeePassAutoResponderService {
 
     private isTotpPrompt (text: string): boolean {
         return /verif|authenticat|otp\b|2fa\b|mfa\b|one.time|time.based/i.test(text)
-    }
-
-    private async injectTotpDisplay (host: string, port: number): Promise<void> {
-        const panel = document.querySelector('keyboard-interactive-auth-panel')
-        if (!panel) return
-
-        const promptText = (panel.querySelector('.prompt-text')?.textContent ?? '').trim()
-        const isTotp = this.isTotpPrompt(promptText)
-        const isPassword = !isTotp && promptText.toLowerCase().includes('password')
-
-        if (!isTotp && !isPassword) return
-
-        if (isPassword) {
-            // Password already pre-filled by Angular — just auto-submit
-            setTimeout(() => {
-                const btn = panel.querySelector('button.btn-primary') as HTMLButtonElement | null
-                btn?.click()
-            }, 100)
-            return
-        }
-
-        const code = await this.keePass.findTotpForSSH(host, port)
-        if (!code) return
-
-        // Auto-fill the input
-        const input = panel.querySelector('input.form-control') as HTMLInputElement | null
-        if (input) {
-            input.value = code
-            input.dispatchEvent(new Event('input'))
-        }
-
-        // Auto-submit
-        setTimeout(() => {
-            const btn = panel.querySelector('button.btn-primary') as HTMLButtonElement | null
-            btn?.click()
-        }, 100)
     }
 }

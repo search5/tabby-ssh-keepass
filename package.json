@@ -1,6 +1,6 @@
 {
   "name": "tabby-keepass-ssh",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "KeePass password integration for Tabby SSH — auto-fills password and TOTP via keyboard-interactive auth",
   "author": "Ji-Ho Lee <search5@gmail.com> (https://flask.moe/tabby-ssh-keepass)",
   "license": "MIT",

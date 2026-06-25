@@ -1,4 +1,4 @@
-import { NgModule, APP_INITIALIZER } from '@angular/core'
+import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import TabbyCoreModule, { ConfigProvider } from 'tabby-core'
@@ -9,8 +9,6 @@ import { KeePassConfigProvider } from './config'
 import { KeePassSettingsTabProvider } from './settings'
 import { KeePassSettingsTabComponent } from './components/keepassSettingsTab.component'
 import { KeePassPasswordStorageService } from './services/keepassPasswordStorage.service'
-import { KeePassAutoResponderService } from './services/keepassAutoResponder.service'
-
 @NgModule({
     imports: [
         CommonModule,
@@ -21,12 +19,6 @@ import { KeePassAutoResponderService } from './services/keepassAutoResponder.ser
         { provide: ConfigProvider, useClass: KeePassConfigProvider, multi: true },
         { provide: SettingsTabProvider, useClass: KeePassSettingsTabProvider, multi: true },
         { provide: PasswordStorageService, useClass: KeePassPasswordStorageService },
-        {
-            provide: APP_INITIALIZER,
-            useFactory: (s: KeePassAutoResponderService) => () => {},
-            deps: [KeePassAutoResponderService],
-            multi: true,
-        },
     ],
     declarations: [
         KeePassSettingsTabComponent,

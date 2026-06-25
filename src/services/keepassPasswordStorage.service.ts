@@ -22,7 +22,9 @@ export class KeePassPasswordStorageService extends PasswordStorageService {
             try {
                 const pw = await this.keePass.findPasswordForSSH(host, port)
                 if (pw) {
-                    this.autoResponder.subscribeForProfile(profile)
+                    // loadPassword is called before keyboard-interactive prompts fire,
+                    // so this is the right moment to set up the TOTP interceptor.
+                    this.autoResponder.ensureWatching()
                     return pw
                 }
             } catch (e) {

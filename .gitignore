@@ -1,0 +1,5 @@
+node_modules/
+dist/
+index.js
+.claude/
+tabby-keepass-integration-prompt.md

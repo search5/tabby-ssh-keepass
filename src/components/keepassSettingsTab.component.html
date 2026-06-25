@@ -1,0 +1,118 @@
+<div class="keepass-settings">
+
+  <!-- KeePass 파일 경로 -->
+  <div class="form-line">
+    <div class="header">
+      <div class="title">KeePass database file</div>
+      <div class="description text-muted">Path to your <code>.kdbx</code> vault file</div>
+    </div>
+    <div class="d-flex gap-2">
+      <input
+        class="form-control"
+        type="text"
+        [(ngModel)]="config.store.keepass.kdbxPath"
+        (ngModelChange)="onPathChanged($event)"
+        placeholder="/path/to/passwords.kdbx"
+      >
+      <button class="btn btn-secondary" (click)="browsePath()">
+        <i class="fas fa-folder-open"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- 마스터 패스워드 -->
+  <div class="form-line">
+    <div class="header">
+      <div class="title">Master password</div>
+      <div class="description text-muted">
+        Saved securely in the OS keychain (macOS Keychain / Windows Credential Manager).
+        Never written to disk in plaintext.
+      </div>
+    </div>
+
+    <div *ngIf="!config.store.keepass.kdbxPath" class="text-muted small mt-1">
+      Set a database file path first.
+    </div>
+
+    <ng-container *ngIf="config.store.keepass.kdbxPath">
+      <!-- 현재 키체인 상태 표시 -->
+      <div class="keychain-status mb-2">
+        <ng-container *ngIf="keychainLoading">
+          <i class="fas fa-spinner fa-spin text-muted"></i>
+          <span class="text-muted ms-1">Checking keychain...</span>
+        </ng-container>
+        <ng-container *ngIf="!keychainLoading && passwordSavedInKeychain">
+          <i class="fas fa-check-circle text-success"></i>
+          <span class="text-success ms-1">Saved in OS keychain</span>
+          <button class="btn btn-sm btn-outline-danger ms-3" (click)="removeMasterPassword()">
+            <i class="fas fa-trash-alt me-1"></i>Remove
+          </button>
+        </ng-container>
+        <ng-container *ngIf="!keychainLoading && !passwordSavedInKeychain">
+          <i class="fas fa-exclamation-circle text-warning"></i>
+          <span class="text-muted ms-1">Not saved — you will be prompted on first connect</span>
+        </ng-container>
+      </div>
+
+      <!-- 저장/교체 입력 -->
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="password"
+          [(ngModel)]="masterPasswordInput"
+          (keydown.enter)="saveMasterPassword()"
+          [placeholder]="passwordSavedInKeychain ? 'Enter new password to replace existing' : 'Enter master password'"
+          autocomplete="new-password"
+        >
+        <button
+          class="btn btn-primary"
+          (click)="saveMasterPassword()"
+          [disabled]="!masterPasswordInput"
+        >
+          {{ passwordSavedInKeychain ? 'Replace' : 'Save to keychain' }}
+        </button>
+      </div>
+
+      <!-- 저장 성공 메시지 (잠깐 표시) -->
+      <div *ngIf="saveSuccess" class="text-success small mt-1">
+        <i class="fas fa-check me-1"></i>Saved successfully.
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- 동작 설정 -->
+  <div class="form-line">
+    <div class="header">
+      <div class="title">Auto-select on single match</div>
+      <div class="description text-muted">
+        Skip the selection modal when exactly one KeePass entry matches the SSH host
+      </div>
+    </div>
+    <toggle
+      [(ngModel)]="config.store.keepass.autoSelectSingleMatch"
+      (ngModelChange)="config.save()"
+    ></toggle>
+  </div>
+
+  <div class="form-line">
+    <div class="header">
+      <div class="title">Vault cache timeout</div>
+      <div class="description text-muted">
+        How long to keep the unlocked vault in memory after use (minutes). 0 = lock immediately after each connection.
+      </div>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <input
+        class="form-control"
+        type="number"
+        style="width: 90px"
+        [(ngModel)]="config.store.keepass.cacheTTLMinutes"
+        (ngModelChange)="config.save()"
+        min="0"
+        max="480"
+      >
+      <span class="text-muted">minutes</span>
+    </div>
+  </div>
+
+</div>

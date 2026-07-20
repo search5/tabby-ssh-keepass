@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4] - 2026-07-20
+
+### Fixed
+- Export `KeePassService` from the package entry point so other Tabby plugins can integrate with it (previously only the `KeePassSSHModule` NgModule was exported).
+- Add `kdbxweb` and `hash-wasm` back to the package manifest — they were dropped from `dependencies` in 1.0.2 without being added anywhere else, which made the published `dist/index.js` work only because it happened to be built on a machine where they were present. A clean checkout could not build or run correctly.
+  - `kdbxweb` → `devDependencies` (plain `require()`, bundled into `dist/index.js` by webpack; not needed at runtime).
+  - `hash-wasm` → `dependencies` (loaded via `eval('require')('hash-wasm')` to deliberately avoid bundling; must be a real installed package for the argon2/KDBX4 code path to work at runtime).
+
 ## [1.0.0] - 2026-06-25
 
 ### Added

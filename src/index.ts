@@ -9,6 +9,8 @@ import { KeePassConfigProvider } from './config'
 import { KeePassSettingsTabProvider } from './settings'
 import { KeePassSettingsTabComponent } from './components/keepassSettingsTab.component'
 import { KeePassPasswordStorageService } from './services/keepassPasswordStorage.service'
+
+export { KeePassService } from './services/keepass.service'
 @NgModule({
     imports: [
         CommonModule,

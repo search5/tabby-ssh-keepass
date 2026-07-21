@@ -117,7 +117,7 @@ export class KeePassService {
         const candidates = new Set<string>([`ssh://${host}`, `ssh://${host}:${port}`])
         if (port === 22) candidates.add(`ssh://${host}:22`)
 
-        const matches = this.collectAllEntries(db, candidates)
+        const matches = this.collectAllEntries(db, candidates, host)
         if (matches.length === 0) return null
 
         let entry: any
@@ -232,21 +232,28 @@ export class KeePassService {
         }
     }
 
-    private collectAllEntries (db: any, urlCandidates: Set<string>): any[] {
+    private collectAllEntries (db: any, urlCandidates: Set<string>, host: string): any[] {
         const results: any[] = []
         for (const group of db.groups) {
-            this.collectGroup(group, urlCandidates, results)
+            this.collectGroup(group, urlCandidates, host, results)
         }
         return results
     }
 
-    private collectGroup (group: any, urlCandidates: Set<string>, results: any[]): void {
+    // URL 필드가 채워진 엔트리는 항상 URL로만 매칭한다(명시적 의도). URL이 비어있는 엔트리에
+    // 한해서만 Title==host로 폴백한다 — 그래야 무관한 엔트리가 host와 같은 이름을 우연히
+    // 갖고 있어도 URL이 채워져 있으면 그쪽이 우선권을 가져 오매칭 위험이 커지지 않는다.
+    private collectGroup (group: any, urlCandidates: Set<string>, host: string, results: any[]): void {
         for (const entry of group.entries ?? []) {
             const url: string = entry.fields.get('URL') ?? ''
-            if (urlCandidates.has(url.replace(/\/$/, ''))) results.push(entry)
+            if (url) {
+                if (urlCandidates.has(url.replace(/\/$/, ''))) results.push(entry)
+            } else if (this.fieldStr(entry, 'Title') === host) {
+                results.push(entry)
+            }
         }
         for (const child of group.groups ?? []) {
-            this.collectGroup(child, urlCandidates, results)
+            this.collectGroup(child, urlCandidates, host, results)
         }
     }
 }

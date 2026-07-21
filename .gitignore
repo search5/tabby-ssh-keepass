@@ -3,3 +3,5 @@ dist/
 index.js
 .claude/
 tabby-keepass-integration-prompt.md
+docs/_build/
+docs/locale/**/*.mo

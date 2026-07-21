@@ -1,0 +1,417 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Ji-Ho Lee
+# This file is distributed under the same license as the tabby-keepass-ssh
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tabby-keepass-ssh 1.0.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-22 00:13+0900\n"
+"PO-Revision-Date: 2026-07-21 23:40+0900\n"
+"Last-Translator: Ji-Ho Lee <search5@gmail.com>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../usage.rst:2 1fa6cb8c6a934f818f39b2d6fb622eb9
+msgid "Usage"
+msgstr "사용법"
+
+#: ../../usage.rst:5 6d99d0134a5942ba8002ed1bf4ef2d7b
+msgid "Setting up the plugin"
+msgstr "플러그인 설정하기"
+
+#: ../../usage.rst:7 dc45c1a5246a45bcb53842299b863a86
+msgid "Open **Tabby Settings → KeePass SSH**."
+msgstr "**Tabby 설정(Settings) → KeePass SSH**\\ 를 엽니다."
+
+#: ../../usage.rst:8 b65f221bab0a404590d3e39a7a68a51d
+msgid "Set the path to your ``.kdbx`` file."
+msgstr "``.kdbx`` 파일의 경로를 설정합니다."
+
+#: ../../usage.rst:9 c080940a3f88480f8e2d866c19289e3a
+msgid ""
+"Enter the master password. It is saved to the OS keychain (macOS Keychain"
+" / libsecret / Windows Credential Manager) so you do not need to re-enter"
+" it on every connection."
+msgstr ""
+"마스터 암호를 입력합니다. 이 암호는 OS 키체인(macOS 키체인 / libsecret / Windows 자격 증명 관리자)에 "
+"저장되므로 연결할 때마다 다시 입력할 필요가 없습니다."
+
+#: ../../usage.rst:12 a2878d93ef794310b01e5df1c353933f
+msgid ""
+"Set the SSH profile's **Authentication** method to **Keyboard-"
+"interactive**."
+msgstr ""
+"SSH 프로필의 **인증(Authentication)** 방식을 **상호작용(Keyboard-interactive)**\\ 으로 "
+"설정합니다."
+
+#: ../../usage.rst:14 d13d0686a89f4376903bacfa54073ac8
+msgid ""
+"Once configured, the plugin auto-fills credentials on every connection "
+"that matches a KeePass entry."
+msgstr "설정이 끝나면 KeePass 항목과 일치하는 모든 연결에서 플러그인이 자격 증명을 자동으로 채워 넣습니다."
+
+#: ../../usage.rst:18 15a435ef84ef4f08883df8c22c7a1736
+msgid "KeePass entry format"
+msgstr "KeePass 항목 형식"
+
+#: ../../usage.rst:20 413a36b3e3d74ce997c7574614e1eacd
+msgid "Each SSH entry must have its **URL** field set to one of:"
+msgstr "각 SSH 항목의 **URL** 필드는 다음 중 하나로 설정되어야 합니다:"
+
+#: ../../usage.rst:27 801455badda74e11865ae1825d5eff17
+msgid "Examples:"
+msgstr "예시:"
+
+#: ../../usage.rst:32 81affa9507e846d6b7068ab858dfb9ba
+msgid "Host"
+msgstr "호스트"
+
+#: ../../usage.rst:33 f630bccb765d4effbe866b1fdb0e0ae5
+msgid "Port"
+msgstr "포트"
+
+#: ../../usage.rst:34 053f86f5e5d8421b8d342bb327e2dbd7
+msgid "URL field"
+msgstr "URL 필드"
+
+#: ../../usage.rst:35 a336d126609a4db89c4b1191dbf4ec87
+msgid "``192.168.1.10``"
+msgstr "``192.168.1.10``"
+
+#: ../../usage.rst:36 4c6ea6535d034879b24a8db1758b8307
+msgid "``22``"
+msgstr "``22``"
+
+#: ../../usage.rst:37 eb3db77ee3f14f49a004ec40367237a5
+msgid "``ssh://192.168.1.10``"
+msgstr "``ssh://192.168.1.10``"
+
+#: ../../usage.rst:38 f6682c06820848998105d7607602ed0c
+msgid "``my-server.example.com``"
+msgstr "``my-server.example.com``"
+
+#: ../../usage.rst:39 bee47b313d7642b3860e5cb9bee0ef3b
+msgid "``2222``"
+msgstr "``2222``"
+
+#: ../../usage.rst:40 080d358f99844843adfd88a7899dd5b0
+msgid "``ssh://my-server.example.com:2222``"
+msgstr "``ssh://my-server.example.com:2222``"
+
+#: ../../usage.rst:42 e274f3a1082b4398b6cfebc2addd33e4
+msgid ""
+"If more than one entry shares the same URL, Tabby's selector UI is shown "
+"so you can pick the entry to use for that connection."
+msgstr "동일한 URL을 가진 항목이 여러 개인 경우, Tabby의 선택 UI가 표시되어 해당 연결에 사용할 항목을 고를 수 있습니다."
+
+#: ../../usage.rst:46 a4b8eb52245b4547ac4963dcfed57aba
+msgid "TOTP setup"
+msgstr "TOTP 설정"
+
+#: ../../usage.rst:48 660aaf76578043d1aecd0effe4cd5d78
+msgid ""
+"If the SSH server requires a TOTP code (e.g. Google Authenticator-style "
+"2FA), store the TOTP secret in the same entry using one of these field "
+"names:"
+msgstr ""
+"SSH 서버가 TOTP 코드(예: Google Authenticator 방식의 2단계 인증)를 요구하는 경우, 다음 필드 이름 중 "
+"하나를 사용하여 같은 항목에 TOTP 비밀 값을 저장하세요:"
+
+#: ../../usage.rst:55 5567a4a669114c2f9b4ebfa2841ea423
+msgid "Field name"
+msgstr "필드 이름"
+
+#: ../../usage.rst:56 fcfe7763a3f64091878f7756de0543a8
+msgid "Format"
+msgstr "형식"
+
+#: ../../usage.rst:57 2fa3185209b849d1a0b7d5ef6a28c6a3
+msgid "Created by"
+msgstr "생성 도구"
+
+#: ../../usage.rst:58 8a70b6f3bc1d4998bcc33c24287ec158
+msgid "``otp``"
+msgstr "``otp``"
+
+#: ../../usage.rst:59 c6560d5a3b9f4052bd32ad0b51abeffe
+msgid "``otpauth://totp/...?secret=BASE32SECRET``"
+msgstr "``otpauth://totp/...?secret=BASE32SECRET``"
+
+#: ../../usage.rst:60 0bdc2d2be2f44b2f9eb3df3d617a5517
+msgid "KeePassXC"
+msgstr "KeePassXC"
+
+#: ../../usage.rst:61 36e141f5f4f04673a520cd339017ea7f
+msgid "``TimeOtp-Secret-Base32``"
+msgstr "``TimeOtp-Secret-Base32``"
+
+#: ../../usage.rst:62 ../../usage.rst:65 1394f0bd4caa4bd4ab85ef12d5f7d292
+#: 78fbac17627848a6b17551151b16ece7
+msgid "raw base32 secret"
+msgstr "원시 base32 비밀 값"
+
+#: ../../usage.rst:63 6dfbd2751fa44629ae3213f1b878ff62
+msgid "KeePass 2.47+ built-in TOTP"
+msgstr "KeePass 2.47 이상 내장 TOTP"
+
+#: ../../usage.rst:64 a2494726f69c47e0be7fcadf913154d3
+msgid "``TOTP Seed``"
+msgstr "``TOTP Seed``"
+
+#: ../../usage.rst:66 31c8e7cae4ff4c1aa63aa07cec35f6d8
+msgid "Legacy KeePass TOTP plugin"
+msgstr "레거시 KeePass TOTP 플러그인"
+
+#: ../../usage.rst:68 d168ba35ffb9481c98bfbc4164c2fd73
+msgid ""
+"When the SSH server presents a TOTP prompt, the plugin generates the "
+"current code from the stored secret and submits it automatically — both "
+"the password and TOTP panels are submitted without any user interaction."
+msgstr ""
+"SSH 서버가 TOTP 입력을 요청하면, 플러그인은 저장된 비밀 값으로부터 현재 코드를 생성하여 자동으로 제출합니다 — 암호와 "
+"TOTP 패널 모두 사용자 개입 없이 제출됩니다."
+
+#: ../../usage.rst:73 c33328b1d4e642419637b7a759ee3d2b
+msgid "Development workflow"
+msgstr "개발 워크플로"
+
+#: ../../usage.rst:75 8e5db4d663734cb7b844a4339049e30c
+msgid ""
+"If you are working on the plugin itself (installed via Method 2 in "
+":doc:`installation`), the following npm scripts are useful:"
+msgstr ""
+"플러그인 자체를 개발 중이라면(:doc:`installation` 문서의 방법 2로 설치한 경우), 다음 npm 스크립트가 "
+"유용합니다:"
+
+#: ../../usage.rst:85 00a2dda9e63248a3b5c0e81130b90782
+msgid "Security notes"
+msgstr "보안 참고 사항"
+
+#: ../../usage.rst:87 9f404ff468194a6590358655e13a2982
+msgid ""
+"The master password is kept in memory only for the duration of a database"
+" open operation and is never written to disk in plaintext."
+msgstr "마스터 암호는 데이터베이스를 여는 동안에만 메모리에 유지되며, 평문으로 디스크에 기록되지 않습니다."
+
+#: ../../usage.rst:89 9e88a70fe30f4d769a197d8636421ac6
+msgid ""
+"``ProtectedValue.getText()`` is called immediately before use and the "
+"result is not retained afterwards."
+msgstr "``ProtectedValue.getText()``\\ 는 사용 직전에 호출되며, 반환된 값은 이후에 보관되지 않습니다."
+
+#: ../../usage.rst:91 4fc0846343834c968ebcc1a7e390095f
+msgid ""
+"Storing the TOTP secret and password in the same KeePass entry is an "
+"intentional trade-off made for convenience."
+msgstr "TOTP 비밀 값과 암호를 같은 KeePass 항목에 저장하는 것은 편의를 위한 의도적인 절충안입니다."
+
+#: ../../usage.rst:95 3b18d6c0448c4862976bf7cb94a2af8f
+msgid "Using it together with other Tabby plugins"
+msgstr "다른 Tabby 플러그인과 함께 사용하기"
+
+#: ../../usage.rst:97 6bcb280324cb42f2b23db220189f9e87
+msgid ""
+"``tabby-keepass-ssh`` also acts as a shared KeePass credential service "
+"that other Tabby plugins can call into — it isn't limited to plain SSH "
+"profiles."
+msgstr ""
+"``tabby-keepass-ssh``\\ 는 일반 SSH 프로필에만 국한되지 않고, 다른 Tabby 플러그인도 호출할 수 있는 "
+"공용 KeePass 자격 증명 서비스 역할도 합니다."
+
+#: ../../usage.rst:101 b16cdebf3f4d4c888f08368ce2194baa
+msgid ""
+"`tabby-aws-ssm-ssh <https://github.com/search5/tabby-aws-ssm-ssh>`_, a "
+"Tabby plugin for connecting to EC2 instances through AWS Systems Manager "
+"Session Manager, depends on ``tabby-keepass-ssh`` being installed in "
+"order to offer its **Retrieve from KeePass** options for AWS credentials "
+"and SSH private keys. The lookup key is different there — ``tabby-aws-"
+"ssm-ssh`` matches entries by EC2 **instance ID** (``ssh://<instanceId>``)"
+" rather than by hostname — but both plugins read from the same KeePass "
+"database, so installing both together lets you manage credentials for "
+"regular SSH connections and AWS SSM connections from a single ``.kdbx`` "
+"file."
+msgstr ""
+"`tabby-aws-ssm-ssh <https://github.com/search5/tabby-aws-ssm-ssh>`_\\ 는 "
+"AWS Systems Manager Session Manager를 통해 EC2 인스턴스에 접속하는 Tabby 플러그인으로, "
+"AWS 자격 증명과 SSH 개인 키에 대한 **KeePass에서 조회(Retrieve from KeePass)** 옵션을 사용하려면 "
+"``tabby-keepass-ssh``\\ 가 설치되어 있어야 합니다. 다만 조회 키가 다른데, ``tabby-aws-ssm-ssh``"
+"\\ 는 호스트 이름이 아니라 EC2 **인스턴스 ID**\\ (``ssh://<instanceId>``)로 항목을 찾습니다 — 두 "
+"플러그인 모두 같은 KeePass 데이터베이스를 읽으므로, 둘을 함께 설치하면 하나의 ``.kdbx`` 파일로 일반 SSH 접속과 "
+"AWS SSM 접속의 자격 증명을 모두 관리할 수 있습니다."
+
+#~ msgid ""
+#~ "This plugin does not add a new "
+#~ "connection type or a new field to"
+#~ " Tabby. You still create and edit "
+#~ "your SSH connection profile exactly as"
+#~ " before, typing the host and username"
+#~ " into Tabby's own built-in SSH "
+#~ "connection UI — the plugin never "
+#~ "auto-fills those. Automatic login is "
+#~ "triggered by exactly two conditions: (1)"
+#~ " that SSH connection profile's "
+#~ "**Authentication** setting is switched to "
+#~ "**Keyboard-interactive**, and (2) a "
+#~ "KeePass entry exists whose **URL** field"
+#~ " is ``ssh://<hostname-or-ip>`` (optionally"
+#~ " with ``:port``) matching that connection's"
+#~ " host and port, with a password "
+#~ "and/or a supported TOTP secret field "
+#~ "set on it. When both hold, the "
+#~ "plugin intercepts the keyboard-interactive "
+#~ "password and TOTP prompts as Tabby "
+#~ "opens the connection, looks up the "
+#~ "matching KeePass entry, and submits the"
+#~ " stored password and/or TOTP code "
+#~ "automatically — you do not need to"
+#~ " type or copy-paste anything at "
+#~ "connection time. If either condition is"
+#~ " not met (authentication is left as"
+#~ " password/key-based, or no matching "
+#~ "entry is found), Tabby's normal login"
+#~ " prompt is shown instead."
+#~ msgstr ""
+#~ "이 플러그인은 Tabby에 새로운 연결 유형이나 새 "
+#~ "입력 필드를 추가하지 않습니다. SSH 연결 프로필은 "
+#~ "이전과 마찬가지로 Tabby 자체의 내장 SSH 연결 "
+#~ "UI에서 호스트와 사용자 이름을 직접 입력하여 만들고 "
+#~ "편집합니다 — 플러그인은 이 값들을 절대로 자동으로 "
+#~ "채우지 않습니다. 자동 로그인은 정확히 두 가지 "
+#~ "조건이 충족될 때만 동작합니다: (1) 해당 SSH "
+#~ "연결 프로필의 **인증(Authentication)** 설정이 "
+#~ "**Keyboard-interactive**\\ 로 전환되어 있을 것, "
+#~ "(2) 그 연결의 호스트 및 포트와 일치하는 "
+#~ "``ssh://<호스트 또는 IP>``\\ (선택적으로 ``:포트`` "
+#~ "포함) URL 필드를 가진 KeePass 항목이 존재하고,"
+#~ " 그 항목에 암호와/또는 지원되는 TOTP 비밀 값"
+#~ " 필드가 설정되어 있을 것. 두 조건이 모두 "
+#~ "충족되면, 플러그인은 Tabby가 연결을 여는 동안 키보드"
+#~ " 대화형 암호 및 TOTP 프롬프트를 가로채어 일치하는"
+#~ " KeePass 항목을 조회하고, 저장된 암호 및/또는 "
+#~ "TOTP 코드를 자동으로 제출합니다 — 연결 시점에 "
+#~ "아무것도 입력하거나 복사/붙여넣기 할 필요가 없습니다. 두"
+#~ " 조건 중 하나라도 충족되지 않으면(인증 방식이 암호/키"
+#~ " 기반으로 남아 있거나, 일치하는 항목을 찾지 못한"
+#~ " 경우) Tabby의 일반 로그인 프롬프트가 대신 "
+#~ "표시됩니다."
+
+#~ msgid ""
+#~ "This plugin does not add a new "
+#~ "connection type or field to Tabby "
+#~ "— you still enter the host and "
+#~ "username in Tabby's own built-in "
+#~ "SSH connection profile as usual. Set "
+#~ "that profile's **Authentication** to "
+#~ "**Keyboard-interactive**, and add a "
+#~ "matching ``ssh://<host>[:port]`` entry in "
+#~ "KeePass with a password and/or TOTP "
+#~ "secret configured; the plugin then finds"
+#~ " and submits them automatically when "
+#~ "you connect. If the conditions aren't"
+#~ " met, Tabby's normal login prompt is"
+#~ " shown instead."
+#~ msgstr ""
+#~ "이 플러그인은 Tabby에 새로운 연결 유형이나 필드를 "
+#~ "추가하지 않습니다 — 호스트와 사용자 이름은 지금까지처럼"
+#~ " Tabby 자체의 내장 SSH 연결 프로필에서 직접"
+#~ " 입력하면 됩니다. 해당 프로필의 **인증(Authentication)**"
+#~ " 방식을 **Keyboard-interactive**\\ 로 설정하고, "
+#~ "KeePass에 암호 및/또는 TOTP 비밀 값이 설정된"
+#~ " ``ssh://<호스트>[:포트]`` 항목을 추가해 두면, 접속할 "
+#~ "때 플러그인이 이를 자동으로 찾아 제출합니다. 조건이 "
+#~ "맞지 않으면 Tabby의 일반 로그인 프롬프트가 대신 "
+#~ "표시됩니다."
+
+#~ msgid "Using with Tabby's built-in SSH"
+#~ msgstr "Tabby 내장 SSH와 함께 사용하기"
+
+#~ msgid ""
+#~ "This plugin does not add a new "
+#~ "connection type or field to Tabby "
+#~ "— you still create and edit your"
+#~ " SSH connection profile as before, "
+#~ "entering the host and username in "
+#~ "Tabby's own built-in SSH connection "
+#~ "UI. The plugin never auto-fills "
+#~ "those."
+#~ msgstr ""
+#~ "이 플러그인은 Tabby에 새로운 연결 유형이나 필드를 "
+#~ "추가하지 않습니다 — SSH 연결 프로필은 이전과 "
+#~ "마찬가지로 Tabby 자체의 내장 SSH 연결 UI에서 "
+#~ "호스트와 사용자 이름을 직접 입력하여 만들고 편집합니다."
+#~ " 플러그인은 이 값들을 절대로 자동으로 채우지 않습니다."
+
+#~ msgid "Automatic login triggers only when both of these are true:"
+#~ msgstr "자동 로그인은 다음 두 조건이 모두 충족될 때만 동작합니다:"
+
+#~ msgid ""
+#~ "The connection profile's **Authentication** "
+#~ "setting is switched to **Keyboard-"
+#~ "interactive**."
+#~ msgstr ""
+#~ "해당 연결 프로필의 **인증(Authentication)** 설정이 "
+#~ "**상호작용(Keyboard-interactive)**\\ 으로 전환되어 있을"
+#~ " 것."
+
+#~ msgid ""
+#~ "A KeePass entry exists whose **URL** "
+#~ "field is ``ssh://<hostname-or-ip>`` "
+#~ "(optionally with ``:port``) matching that "
+#~ "connection's host and port, with a "
+#~ "password and/or a supported TOTP secret"
+#~ " configured."
+#~ msgstr ""
+#~ "그 연결의 호스트 및 포트와 일치하는 ``ssh://<호스트"
+#~ " 또는 IP>``\\ (선택적으로 ``:포트`` 포함) URL"
+#~ " 필드를 가진 KeePass 항목이 존재하고, 그 항목에"
+#~ " 암호와/또는 지원되는 TOTP 비밀 값이 설정되어 있을"
+#~ " 것."
+
+#~ msgid ""
+#~ "When both hold, the plugin intercepts"
+#~ " the keyboard-interactive password and "
+#~ "TOTP prompts as Tabby opens the "
+#~ "connection, looks up the matching "
+#~ "KeePass entry, and submits the stored"
+#~ " password and/or TOTP code automatically"
+#~ " — no typing or copy-pasting "
+#~ "needed."
+#~ msgstr ""
+#~ "두 조건이 모두 충족되면, 플러그인은 Tabby가 연결을"
+#~ " 여는 동안 키보드 대화형 암호 및 TOTP "
+#~ "프롬프트를 가로채어 일치하는 KeePass 항목을 조회하고, "
+#~ "저장된 암호 및/또는 TOTP 코드를 자동으로 제출합니다"
+#~ " — 입력하거나 복사/붙여넣기 할 필요가 없습니다."
+
+#~ msgid ""
+#~ "If either condition isn't met "
+#~ "(authentication left as password/key-based,"
+#~ " or no matching entry found), Tabby's"
+#~ " normal login prompt is shown "
+#~ "instead."
+#~ msgstr ""
+#~ "두 조건 중 하나라도 충족되지 않으면(인증 방식이 "
+#~ "암호/키 기반으로 남아 있거나, 일치하는 항목을 찾지 "
+#~ "못한 경우) Tabby의 일반 로그인 프롬프트가 대신 "
+#~ "표시됩니다."
+
+#~ msgid ""
+#~ "See :doc:`integration` first if you "
+#~ "haven't already — it explains how "
+#~ "this plugin hooks into Tabby's own "
+#~ "SSH connection profiles and when "
+#~ "automatic login actually triggers."
+#~ msgstr ""
+#~ "아직 읽지 않으셨다면 :doc:`integration` 문서를 먼저"
+#~ " 참고하세요 — 이 플러그인이 Tabby 자체의 SSH"
+#~ " 연결 프로필과 어떻게 연동되는지, 그리고 자동 로그인이"
+#~ " 정확히 언제 동작하는지 설명합니다."
+

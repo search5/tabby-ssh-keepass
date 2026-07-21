@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Ji-Ho Lee
+# This file is distributed under the same license as the tabby-keepass-ssh
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tabby-keepass-ssh 1.0.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 23:52+0900\n"
+"PO-Revision-Date: 2026-07-21 23:40+0900\n"
+"Last-Translator: Ji-Ho Lee <search5@gmail.com>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../troubleshooting.rst:2 0fb52db0c3a94831919c553d75298d95
+msgid "Troubleshooting & FAQ"
+msgstr "문제 해결 및 자주 묻는 질문"
+
+#: ../../troubleshooting.rst:5 4121725736a140e794d3ce22a876f88b
+msgid "Multiple entries match the same URL"
+msgstr "동일한 URL에 여러 항목이 일치하는 경우"
+
+#: ../../troubleshooting.rst:7 f96c449b00364277941165ca72338e1e
+msgid ""
+"If more than one KeePass entry has the same ``ssh://hostname:port`` URL, "
+"the plugin cannot know which one you mean. In this case Tabby shows a "
+"selector dialog listing every matching entry — pick the correct one and "
+"the connection continues normally. To avoid seeing this dialog, make sure"
+" only one entry per host/port combination has a matching URL field."
+msgstr ""
+"동일한 ``ssh://hostname:port`` URL을 가진 KeePass 항목이 여러 개 있으면, 플러그인은 어느 것을 "
+"사용해야 할지 알 수 없습니다. 이 경우 Tabby는 일치하는 모든 항목을 나열하는 선택 대화상자를 표시합니다 — 올바른 항목을 "
+"선택하면 연결이 정상적으로 계속됩니다. 이 대화상자가 표시되지 않게 하려면, 호스트/포트 조합마다 일치하는 URL 필드를 가진 "
+"항목이 하나만 있도록 하세요."
+
+#: ../../troubleshooting.rst:14 f24124da9d884f4fa81b264cb3124b93
+msgid "\"Wrong password\" or the master password is not remembered"
+msgstr "\"암호가 틀렸습니다\" 또는 마스터 암호가 저장되지 않는 경우"
+
+#: ../../troubleshooting.rst:16 6d8f7f2b0449449789257e6468a07abc
+msgid ""
+"Double-check that the password entered in **Tabby Settings → KeePass "
+"SSH** matches your ``.kdbx`` master password exactly (it is case-"
+"sensitive)."
+msgstr ""
+"**Tabby 설정 → KeePass SSH**\\ 에 입력한 암호가 ``.kdbx`` 마스터 암호와 정확히 일치하는지 다시 "
+"확인하세요(대소문자를 구분합니다)."
+
+#: ../../troubleshooting.rst:18 de62eebe00b5494d899c48f66e79944e
+msgid ""
+"The password is stored in your OS's secret store (macOS Keychain / "
+"libsecret / Windows Credential Manager). If Tabby keeps asking for the "
+"password again, verify that Tabby has permission to access the keychain "
+"and that no other application or OS policy is blocking access to it."
+msgstr ""
+"암호는 OS의 비밀 저장소(macOS 키체인 / libsecret / Windows 자격 증명 관리자)에 저장됩니다. Tabby가 "
+"암호를 계속 다시 요구한다면, Tabby가 키체인에 접근할 권한이 있는지, 그리고 다른 애플리케이션이나 OS 정책이 접근을 차단하고"
+" 있지 않은지 확인하세요."
+
+#: ../../troubleshooting.rst:22 11e91227b76f44fc9acd50e8201559bf
+msgid ""
+"On Linux, make sure a libsecret-compatible keyring daemon (such as GNOME "
+"Keyring or KWallet) is running; without one, secret storage may silently "
+"fail."
+msgstr ""
+"Linux에서는 GNOME 키링이나 KWallet과 같은 libsecret 호환 키링 데몬이 실행 중인지 확인하세요. 데몬이 없으면"
+" 비밀 저장이 조용히 실패할 수 있습니다."
+
+#: ../../troubleshooting.rst:27 020f1a67154646ee9e2494f65f7789b1
+msgid "TOTP code is not submitted automatically"
+msgstr "TOTP 코드가 자동으로 제출되지 않는 경우"
+
+#: ../../troubleshooting.rst:29 68016911f02e400c83b8967b267192fe
+msgid ""
+"The plugin only recognizes three specific field names for the TOTP "
+"secret: ``otp``, ``TimeOtp-Secret-Base32``, and ``TOTP Seed``. If your "
+"entry stores the secret under a different field name (for example a "
+"custom string field), the plugin will not find it. Rename the field to "
+"one of the supported names, or add a copy of the secret under one of "
+"them."
+msgstr ""
+"플러그인은 TOTP 비밀 값에 대해 ``otp``, ``TimeOtp-Secret-Base32``, ``TOTP Seed``\\ "
+"라는 세 가지 필드 이름만 인식합니다. 항목이 비밀 값을 다른 필드 이름(예: 사용자 지정 문자열 필드)에 저장하고 있다면, "
+"플러그인이 이를 찾지 못합니다. 필드 이름을 지원되는 이름 중 하나로 변경하거나, 비밀 값의 복사본을 지원되는 필드 중 하나에 "
+"추가하세요."
+
+#: ../../troubleshooting.rst:36 a2053150732648f58626e9f01c3fa579
+msgid "Changes to the ``.kdbx`` file are not picked up"
+msgstr "``.kdbx`` 파일의 변경 사항이 반영되지 않는 경우"
+
+#: ../../troubleshooting.rst:38 87c1d1627c20446c801fc09f566e545d
+msgid ""
+"The plugin watches the database file with ``fs.watch`` and clears its "
+"cache when a change is detected. If edits made in KeePass do not appear "
+"to be picked up:"
+msgstr ""
+"플러그인은 ``fs.watch``\\ 로 데이터베이스 파일을 감시하며 변경이 감지되면 캐시를 지웁니다. KeePass에서 수정한 "
+"내용이 반영되지 않는 것처럼 보인다면 다음을 확인하세요:"
+
+#: ../../troubleshooting.rst:42 9d1574dca4054998ae6a25e1aed18d2d
+msgid ""
+"Confirm you saved the changes in your KeePass client — some clients write"
+" to a temporary file and rename it into place, which can behave "
+"differently across filesystems and may occasionally be missed by "
+"``fs.watch``."
+msgstr ""
+"KeePass 클라이언트에서 변경 사항을 저장했는지 확인하세요 — 일부 클라이언트는 임시 파일에 기록한 뒤 이를 제자리로 이름을 "
+"바꾸는 방식으로 저장하는데, 이는 파일 시스템에 따라 동작이 달라질 수 있으며 ``fs.watch``\\ 가 이를 간혹 감지하지 "
+"못할 수 있습니다."
+
+#: ../../troubleshooting.rst:46 08b25fdf4d1d4b35b344df87546e0cad
+msgid ""
+"If the database is on a network share or a synced folder (e.g. cloud "
+"storage), file-change events may not propagate reliably. Reopening the "
+"KeePass path in **Tabby Settings → KeePass SSH** forces a fresh read."
+msgstr ""
+"데이터베이스가 네트워크 공유 폴더나 동기화 폴더(예: 클라우드 스토리지)에 있는 경우, 파일 변경 이벤트가 안정적으로 전달되지 않을"
+" 수 있습니다. **Tabby 설정 → KeePass SSH**\\ 에서 KeePass 경로를 다시 열면 강제로 새로 읽어옵니다."
+
+#: ../../troubleshooting.rst:51 8990dce867604d0ca4f16b92f4a47d8f
+msgid "KDBX3 vs KDBX4 compatibility"
+msgstr "KDBX3와 KDBX4 호환성"
+
+#: ../../troubleshooting.rst:53 c5875072fbb54a3c82dd3868af889a25
+msgid ""
+"Both formats are supported. KDBX4 databases using Argon2 key derivation "
+"are decrypted using the ``hash-wasm`` WebAssembly implementation, so no "
+"native Argon2 module is required. If a KDBX4 database fails to open, make"
+" sure the plugin has been rebuilt/updated to a version that bundles the "
+"required ``hash-wasm`` dependency (see :doc:`installation`)."
+msgstr ""
+"두 형식 모두 지원됩니다. Argon2 키 유도를 사용하는 KDBX4 데이터베이스는 ``hash-wasm`` WebAssembly "
+"구현을 사용하여 복호화되므로 별도의 네이티브 Argon2 모듈이 필요하지 않습니다. KDBX4 데이터베이스가 열리지 않는다면, "
+"필요한 ``hash-wasm`` 의존성을 포함하는 버전으로 플러그인이 다시 빌드/업데이트되었는지 "
+"확인하세요(:doc:`installation` 참고)."
+
+#~ msgid "The plugin does not appear in the Tabby Plugin Manager search"
+#~ msgstr "Tabby 플러그인 매니저 검색에 플러그인이 나타나지 않는 경우"
+
+#~ msgid ""
+#~ "Remember that Tabby's Plugin Manager "
+#~ "strips the ``tabby-`` prefix from "
+#~ "package names in its search index. "
+#~ "Search for ``keepass-ssh`` rather than"
+#~ " ``tabby-keepass-ssh``. See "
+#~ ":doc:`installation` for details."
+#~ msgstr ""
+#~ "Tabby 플러그인 매니저는 검색 색인에서 패키지명의 "
+#~ "``tabby-`` 접두사를 제거한다는 점을 기억하세요. "
+#~ "``tabby-keepass-ssh`` 대신 ``keepass-ssh``\\"
+#~ " 로 검색하세요. 자세한 내용은 :doc:`installation`\\ "
+#~ "을 참고하세요."
+

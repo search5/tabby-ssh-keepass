@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Ji-Ho Lee
+# This file is distributed under the same license as the tabby-keepass-ssh
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tabby-keepass-ssh 1.0.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 23:37+0900\n"
+"PO-Revision-Date: 2026-07-21 23:40+0900\n"
+"Last-Translator: Ji-Ho Lee <search5@gmail.com>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../architecture.rst:2 4d6bd2442aca4456a35efcd347549ec0
+msgid "Architecture"
+msgstr "아키텍처"
+
+#: ../../architecture.rst:4 daa9308cf2d14abb9b1824343e9f3948
+msgid ""
+"This page describes the internal design of **tabby-keepass-ssh** and the "
+"reasoning behind its key implementation choices."
+msgstr ""
+"이 페이지는 **tabby-keepass-ssh**\ 의 내부 설계와 주요 구현 선택의 이유를 "
+"설명합니다."
+
+#: ../../architecture.rst:8 d1a1004e242341c5b52e324213ef5fdd
+msgid "Authentication hook"
+msgstr "인증 훅(Hook)"
+
+#: ../../architecture.rst:10 4151c56e26f445dc8dd6fc916d5ab2b1
+msgid ""
+"The plugin integrates with Tabby's SSH stack by observing the keyboard-"
+"interactive authentication flow exposed by ``tabby-ssh``. When a "
+"connection prompts for a password or a TOTP code, the plugin intercepts "
+"the prompt, looks up a matching KeePass entry, and submits the "
+"appropriate value automatically — without requiring the user to interact "
+"with the prompt."
+msgstr ""
+"플러그인은 ``tabby-ssh``\ 가 제공하는 키보드 상호작용 인증 흐름을 관찰하는 "
+"방식으로 Tabby의 SSH 스택과 연동됩니다. 연결에서 암호나 TOTP 코드를 "
+"요청하면, 플러그인이 해당 프롬프트를 가로채 일치하는 KeePass 항목을 조회한 "
+"뒤 알맞은 값을 자동으로 제출합니다 — 사용자가 프롬프트와 상호작용할 필요가 "
+"없습니다."
+
+#: ../../architecture.rst:18 9b1679a3eed14509af5d7f064e0596a5
+msgid "Entry matching"
+msgstr "항목 매칭"
+
+#: ../../architecture.rst:20 da35c8d917064182b36f9afeb5f0f32b
+msgid ""
+"Entries are matched by comparing the SSH profile's host and port against "
+"each entry's **URL** field, which is expected to follow the "
+"``ssh://hostname`` or ``ssh://hostname:port`` convention. When several "
+"entries resolve to the same URL, the plugin does not guess: it defers to "
+"Tabby's built-in selector UI so the user can pick the correct entry for "
+"that connection."
+msgstr ""
+"항목은 SSH 프로필의 호스트와 포트를 각 항목의 **URL** 필드와 비교하여 "
+"매칭되며, 이 필드는 ``ssh://hostname`` 또는 ``ssh://hostname:port`` 규칙을 "
+"따라야 합니다. 여러 항목이 동일한 URL로 확인되는 경우, 플러그인은 임의로 "
+"추측하지 않고 Tabby의 내장 선택 UI에 위임하여 사용자가 해당 연결에 맞는 "
+"항목을 직접 고를 수 있게 합니다."
+
+#: ../../architecture.rst:28 c175a8947b9f4123b6c97bfcc3625846
+msgid "Secure handling of the master password"
+msgstr "마스터 암호의 안전한 처리"
+
+#: ../../architecture.rst:30 49d57f73672143a3a09e4883df44c07c
+msgid ""
+"The KeePass master password is treated as sensitive material throughout "
+"its lifecycle:"
+msgstr "KeePass 마스터 암호는 전체 수명 주기 동안 민감한 정보로 취급됩니다:"
+
+#: ../../architecture.rst:33 10cdbe4421274c738758c6d5454e5035
+msgid ""
+"It is stored in the OS-native secret store — macOS Keychain, libsecret on"
+" Linux, or Windows Credential Manager — never written to disk in "
+"plaintext."
+msgstr ""
+"OS 고유의 비밀 저장소(macOS 키체인, Linux의 libsecret, 또는 Windows 자격 "
+"증명 관리자)에 저장되며, 평문으로 디스크에 기록되지 않습니다."
+
+#: ../../architecture.rst:36 5cc2856497854530a2b3c4bd9d21acdb
+msgid ""
+"It is only held in memory for the duration of a single database-open "
+"operation, then discarded."
+msgstr "단일 데이터베이스 열기 작업 동안에만 메모리에 유지된 후 폐기됩니다."
+
+#: ../../architecture.rst:38 4084721e42934147804ccace1684a00c
+msgid ""
+"Field values inside the decrypted database are wrapped in ``kdbxweb``'s "
+"``ProtectedValue`` type. ``ProtectedValue.getText()`` is called "
+"immediately before a value (password or TOTP secret) is used, and the "
+"plain string is not cached or retained afterwards."
+msgstr ""
+"복호화된 데이터베이스 내부의 필드 값은 ``kdbxweb``\ 의 ``ProtectedValue`` "
+"타입으로 감싸져 있습니다. ``ProtectedValue.getText()``\ 는 값(암호 또는 TOTP "
+"비밀 값)을 사용하기 직전에 호출되며, 평문 문자열은 이후 캐시되거나 보관되지 "
+"않습니다."
+
+#: ../../architecture.rst:44 bb71482c1a474e6bb43f6da530379bcd
+msgid "Database format support"
+msgstr "데이터베이스 형식 지원"
+
+#: ../../architecture.rst:46 b5788c2e39914cf6af6de4e36c5f9e2d
+msgid ""
+"The plugin reads both KDBX3 and KDBX4 database files. KDBX4 databases "
+"that use Argon2 as their key derivation function are supported through "
+"the `hash-wasm <https://github.com/Daninet/hash-wasm>`_ library, which "
+"provides a WebAssembly implementation of Argon2 suitable for use inside "
+"Tabby's Node.js/Electron runtime."
+msgstr ""
+"플러그인은 KDBX3와 KDBX4 데이터베이스 파일을 모두 읽을 수 있습니다. 키 "
+"유도 함수로 Argon2를 사용하는 KDBX4 데이터베이스는 `hash-wasm "
+"<https://github.com/Daninet/hash-wasm>`_ 라이브러리를 통해 지원되며, 이 "
+"라이브러리는 Tabby의 Node.js/Electron 런타임에서 사용하기 적합한 "
+"WebAssembly 기반 Argon2 구현을 제공합니다."
+
+#: ../../architecture.rst:53 54212489835240b990b9e588d49b8a1b
+msgid "TOTP generation"
+msgstr "TOTP 생성"
+
+#: ../../architecture.rst:55 2df944acaf9d4bfc8242af8cee5aca69
+msgid ""
+"TOTP codes are generated locally from the secret stored in the entry. The"
+" plugin recognizes three possible field names for the secret (``otp``, "
+"``TimeOtp-Secret-Base32``, ``TOTP Seed``) to stay compatible with "
+"KeePassXC, KeePass's built-in TOTP support (2.47+), and the legacy "
+"KeePass TOTP plugin. See :doc:`usage` for the exact field formats."
+msgstr ""
+"TOTP 코드는 항목에 저장된 비밀 값으로부터 로컬에서 생성됩니다. 플러그인은 "
+"KeePassXC, KeePass 내장 TOTP 지원(2.47 이상), 그리고 레거시 KeePass TOTP "
+"플러그인과의 호환성을 유지하기 위해 세 가지 필드 이름(``otp``, "
+"``TimeOtp-Secret-Base32``, ``TOTP Seed``)을 인식합니다. 정확한 필드 형식은 "
+":doc:`usage`\ 를 참고하세요."
+
+#: ../../architecture.rst:62 b8a3dbdbd8bb4428891f6cc01137f6ac
+msgid "Live reload of the database file"
+msgstr "데이터베이스 파일의 실시간 반영(Live reload)"
+
+#: ../../architecture.rst:64 91041e60f2564c17b59adf318f3ccb67
+msgid ""
+"The plugin watches the configured ``.kdbx`` file with Node's "
+"``fs.watch``. When the file changes on disk — for example after adding a "
+"new SSH entry in KeePass — the plugin's in-memory cache is invalidated "
+"automatically, so the next connection attempt reads the updated database "
+"instead of a stale cached copy."
+msgstr ""
+"플러그인은 Node의 ``fs.watch``\ 를 사용하여 설정된 ``.kdbx`` 파일을 감시합니다. "
+"예를 들어 KeePass에서 새 SSH 항목을 추가하는 등 파일이 디스크에서 변경되면, "
+"플러그인의 메모리 캐시가 자동으로 무효화되어 다음 연결 시도에서 오래된 "
+"캐시가 아닌 갱신된 데이터베이스를 읽습니다."

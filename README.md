@@ -1,5 +1,7 @@
 # tabby-keepass-ssh
 
+🌐 **English** | [한국어](README.ko.md)
+
 📖 **[Documentation](https://search5.github.io/tabby-ssh-keepass/)** (English / 한국어)
 
 A [Tabby](https://tabby.sh) plugin that automatically fills SSH passwords and TOTP codes from a KeePass database during keyboard-interactive authentication — no manual copy-paste required.

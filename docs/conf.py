@@ -34,6 +34,7 @@ gettext_uuid = True
 
 html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
+html_js_files = ['custom.js']
 html_title = f'{project} Documentation (EN)'
 
 html_theme_options = {
@@ -66,6 +67,7 @@ epub_copyright = copyright
 epub_exclude_files = [
     'search.html',
     '_static/switcher.json',
+    '_static/custom.js',
     '.buildinfo',
     '.doctrees/*',
 ]

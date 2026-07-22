@@ -10,8 +10,7 @@ This is the recommended method for most users.
 
 #. Open Tabby and go to **Settings → Plugins**.
 #. In the search box, type ``keepass-ssh``.
-#. Click **Install** on the ``tabby-keepass-ssh`` result, then restart Tabby
-   when prompted.
+#. Click **Install**, then restart Tabby when prompted.
 
 Method 2 — Clone the Git repository and build from source
 ------------------------------------------------------------

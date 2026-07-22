@@ -49,14 +49,14 @@ If the SSH server requires TOTP (e.g. Google Authenticator), store the TOTP secr
 
 ### Option A — Tabby Plugin Manager (recommended)
 
-Search for `tabby-keepass-ssh` in **Tabby Settings → Plugins** and click Install. Restart Tabby when prompted.
+Search for `keepass-ssh` in **Tabby Settings → Plugins** and click Install. Restart Tabby when prompted.
 
 ### Option B — From source
 
 **Requirements:** [Node.js](https://nodejs.org/) 18 or later
 
 ```bash
-git clone <this-repo>
+git clone https://github.com/search5/tabby-ssh-keepass.git
 cd tabby-ssh-keepass
 npm install
 npm run build

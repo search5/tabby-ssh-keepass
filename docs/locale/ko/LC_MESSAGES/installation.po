@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tabby-keepass-ssh 1.0.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 23:52+0900\n"
+"POT-Creation-Date: 2026-07-22 22:01+0900\n"
 "PO-Revision-Date: 2026-07-21 23:40+0900\n"
 "Last-Translator: Ji-Ho Lee <search5@gmail.com>\n"
 "Language: ko\n"
@@ -19,71 +19,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../installation.rst:2 4c0db626ac684df3b1d3af8554376df9
+#: ../../installation.rst:2 3ec56ef342774886bb454b25ac78f3e4
 msgid "Installation"
 msgstr "설치"
 
-#: ../../installation.rst:4 9d31c788701e4d7cb1f0fd680e6c4bf9
+#: ../../installation.rst:4 34217bb506854dffa12286c51fed41a1
 msgid "There are two ways to install **tabby-keepass-ssh**."
 msgstr "**tabby-keepass-ssh**\\ 를 설치하는 방법은 두 가지입니다."
 
-#: ../../installation.rst:7 ac16ca00343d430d81a826892da5bf8d
+#: ../../installation.rst:7 1d231887c88f442bb2f0035e25b6e01e
 msgid "Method 1 — Install from the Tabby Plugin Manager"
 msgstr "방법 1 — Tabby 플러그인 매니저에서 설치"
 
-#: ../../installation.rst:9 7862d6d58e7446b7bb5a6830eefe05a2
+#: ../../installation.rst:9 7a1359634d9b46c48e713c3f6a9d33c7
 msgid "This is the recommended method for most users."
 msgstr "대부분의 사용자에게 권장되는 방법입니다."
 
-#: ../../installation.rst:11 660801976f504741a61ded47cab00cc5
+#: ../../installation.rst:11 14d7dd3b364842d79802756aba234ea4
 msgid "Open Tabby and go to **Settings → Plugins**."
 msgstr "Tabby를 열고 **설정(Settings) → 플러그인(Plugins)**\\ 으로 이동합니다."
 
-#: ../../installation.rst:12 986c54c04ac94b66af0d1d5dc17680a8
+#: ../../installation.rst:12 56630c64df304a68930daaf196719c67
 msgid "In the search box, type ``keepass-ssh``."
 msgstr "검색창에 ``keepass-ssh``\\ 를 입력합니다."
 
-#: ../../installation.rst:13 486e9c1778fb40a58fd176f957b1cb2b
-msgid ""
-"Click **Install** on the ``tabby-keepass-ssh`` result, then restart Tabby"
-" when prompted."
-msgstr ""
-"검색 결과에 나타난 ``tabby-keepass-ssh`` 항목에서 **설치(Install)**\\ 를 클릭한 다음, 안내에 따라 "
-"Tabby를 재시작합니다."
+#: ../../installation.rst:13 0be96fba97e5478c8612a084526d1110
+msgid "Click **Install**, then restart Tabby when prompted."
+msgstr "**설치(Install)**\\ 를 클릭한 다음, 안내에 따라 Tabby를 재시작합니다."
 
-#: ../../installation.rst:17 efa32f69020c4580a0c104c034ccfd7c
+#: ../../installation.rst:16 eccf6c058d4e4f20b828d40178db40f1
 msgid "Method 2 — Clone the Git repository and build from source"
 msgstr "방법 2 — Git 저장소를 복제하여 직접 설치"
 
-#: ../../installation.rst:19 ab8e43d0c5e542288997ada9438c4346
+#: ../../installation.rst:18 db55dd4abd5847b0b02ab5d019d98151
 msgid ""
 "Use this method if you want to build the plugin yourself, run a "
 "development build, or contribute changes."
 msgstr "플러그인을 직접 빌드하거나, 개발용 빌드를 실행하거나, 코드 기여를 하고 싶다면 이 방법을 사용하세요."
 
-#: ../../installation.rst:22 dcf1677d2852413cad323a2e57c6b745
+#: ../../installation.rst:21 7b6373b408d04df591ecd4011144233a
 msgid "**Requirements:** `Node.js <https://nodejs.org/>`_ 18 or later."
 msgstr "**요구 사항:** `Node.js <https://nodejs.org/>`_ 18 이상."
 
-#: ../../installation.rst:32 365318f98d664d36b6b0e3472f37dbaa
+#: ../../installation.rst:31 9fbc336581404de2917afddce9aa137d
 msgid ""
 "``npm run install-plugin`` copies the built files to the correct Tabby "
 "plugin directory for your operating system:"
 msgstr "``npm run install-plugin``\\ 은 빌드된 파일을 운영체제에 맞는 Tabby 플러그인 디렉터리로 복사합니다:"
 
-#: ../../installation.rst:38 ee1ad2afb9f440428206a6136e4f2b76
+#: ../../installation.rst:37 a001fbac7e804d2b915a0b79ffffbdaf
 msgid "OS"
 msgstr "OS"
 
-#: ../../installation.rst:39 dbefe13fff6a4594b1a0fb3943ee5dd4
+#: ../../installation.rst:38 dda9b3d2df5f4e7da6cb6011df72c0d2
 msgid "Plugin directory"
 msgstr "플러그인 디렉터리"
 
-#: ../../installation.rst:40 29f80a66db8040d28b2be99ecfbda163
+#: ../../installation.rst:39 065abdee35ed4177bdae8fdce14a3cea
 msgid "macOS"
 msgstr "macOS"
 
-#: ../../installation.rst:41 cacbf0c603534ecfb11aa29d2b0b3f33
+#: ../../installation.rst:40 a4bab70e70a3433a8ae470c3fba29e2b
 msgid ""
 "``~/Library/Application Support/tabby/plugins/node_modules/tabby-keepass-"
 "ssh/``"
@@ -91,27 +87,27 @@ msgstr ""
 "``~/Library/Application Support/tabby/plugins/node_modules/tabby-keepass-"
 "ssh/``"
 
-#: ../../installation.rst:42 211c690e1af54fcd9d9990ab1004080f
+#: ../../installation.rst:41 51197ce1452948e9af7afc6fd5d1d72e
 msgid "Linux"
 msgstr "Linux"
 
-#: ../../installation.rst:43 d7f375db9e5d46158e872dfdd705b281
+#: ../../installation.rst:42 06f296c88b0445c4974ce13864774086
 msgid "``~/.config/tabby/plugins/node_modules/tabby-keepass-ssh/``"
 msgstr "``~/.config/tabby/plugins/node_modules/tabby-keepass-ssh/``"
 
-#: ../../installation.rst:44 52949e77ac2443048ac003ed1238e97a
+#: ../../installation.rst:43 6549b1d7bcab4da1972ae21c8821a632
 msgid "Windows"
 msgstr "Windows"
 
-#: ../../installation.rst:45 1ddad80596624527b9405336d1447d83
+#: ../../installation.rst:44 884817a67dda4e58ad6df1f9e0e24b21
 msgid "``%APPDATA%\\tabby\\plugins\\node_modules\\tabby-keepass-ssh\\``"
 msgstr "``%APPDATA%\\tabby\\plugins\\node_modules\\tabby-keepass-ssh\\``"
 
-#: ../../installation.rst:47 2ad0168d99bb488b990e18f68465d814
+#: ../../installation.rst:46 5c580f048ed24246bade9df29f0ba193
 msgid "Restart Tabby after installation."
 msgstr "설치 후 Tabby를 재시작하세요."
 
-#: ../../installation.rst:49 f0448b96acdd4341a1f7f6909b743efd
+#: ../../installation.rst:48 2a78cb893d6c4777a3d8057f13c1a724
 msgid "Once installed, continue to :doc:`usage` to configure the plugin."
 msgstr "설치가 끝났다면 플러그인을 설정하기 위해 :doc:`usage` 문서로 이동하세요."
 
